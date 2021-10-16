@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="upper-part">
+            <div class="h1-container">
+                <h1>Simple, traffic-based pricing</h1>
+                <p>Sign-up for our 30-day trial. No credit card required.</p>
+            </div>
+        
+            <div class="pageviews">
+                <p aria-live="polite">100k</p>
+                <h2>Pageviews</h2>
+            </div>
+
+            <div class="monthly">
+                <p class="monthly-price" aria-live="polite"></p>
+                <p class="per-month">/month</p>
+            </div>
+        
+            <input type="range" id="price-range" class="billing-range" min="0" max="32" step="2" aria-live="polite" aria-label="price range">
+
+            <p class="monthly-billing">Monthly Billing</p>
+
+            <label for="toggle-slide" class="switch" tabindex="0">
+                <input type="checkbox" id="toggle-slide" aria-live="polite">
+                <span class="slider"></span>
+            </label>
+        
+            <p class="yearly-billing">Yearly Billing <span>25% discount</span></p>
+        </div>
+        
+        <div class="lower-part">
+            <div class="includes">
+                <div>
+                    <img src="images/icon-check.svg" alt="">
+                    <p>Unlimited websites</p>
+                </div>
+                <div>
+                    <img src="images/icon-check.svg" alt="">
+                    <p>100% data ownership</p>
+                </div>
+                <div>
+                    <img src="images/icon-check.svg" alt="">
+                    <p>Email reports</p>
+                </div>
+            </div>
+        
+            <button>Start my trial</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

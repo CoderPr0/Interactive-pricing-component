@@ -1,0 +1,333 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    outline: none;
+    user-select: none;
+    margin: 0;
+}
+
+body {
+    background: url(images/bg-pattern.svg)
+                no-repeat
+                hsl(230, 100%, 99%);
+    background-size: contain;
+                
+    margin: 16% 30% 6%;
+}
+
+h2, p {
+    color: hsl(225, 20%, 60%);
+}
+
+
+
+/* _______Main_______ */
+main {
+    background-color: hsl(0, 0%, 100%);
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05);
+}
+
+
+/* ___Upper part___ */
+.upper-part {
+    display: grid;
+    grid-template-columns: 1fr 0.15fr 1.2fr;
+    row-gap: 2em;
+
+    padding: 2.5em;
+    border-bottom: solid 0.1em hsl(224, 65%, 95%);
+}
+
+/* _h1 container_ */
+.h1-container {
+    background: url(images/pattern-circles.svg)
+                no-repeat
+                center;
+    background-size: contain;
+
+    text-align: center;
+    width: 30em;
+    padding: 3em 0;
+    
+    position: absolute;
+    top: -11em;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.h1-container > h1 {
+    color: hsl(227, 35%, 25%);
+}
+
+.h1-container > p {
+    font-weight: 800;
+}
+
+/* _pageviews & monthly price_ */
+.pageviews {
+    align-self: center;
+}
+
+.pageviews > h2, .pageviews > p {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+}
+
+.pageviews > p {
+    margin-right: 0.3em;
+}
+
+.monthly {
+    display: flex;
+    grid-column: 3;
+    margin: auto 0 auto auto;
+}
+
+.monthly-price {
+    font-size: 48px;
+    color: hsl(227, 35%, 25%);
+    margin-right: 0.2em;
+}
+
+.per-month {
+    margin: auto;
+}
+
+/* _range_ */
+.billing-range {
+    grid-column: span 3;
+    background: linear-gradient(90deg, hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%);
+    cursor: pointer;
+    height: 0.7em;
+    border-radius: 1em;
+}
+
+.billing-range:focus-visible {
+    box-shadow: 0 0 1px 2px hsl(0, 0%, 100%), 0 0 2px 4px hsl(226, 100%, 87%);
+}
+
+.range-hold {
+    cursor: grab;
+}
+
+input[type=range]::-moz-range-thumb {
+    background: url(images/icon-slider.svg)
+                hsl(174, 86%, 45%)
+                no-repeat
+                center;
+    
+    height: 2.5em;
+    width: 2.5em;
+    border: none;
+    border-radius: 2.5em;
+}
+
+/* _discount stuff_ */
+.monthly-billing {
+    text-align: end;
+    margin: auto 1em auto 0;
+}
+
+.switch {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 3.5em;
+    height: 1.8em;
+}
+
+.switch:focus-visible {
+    box-shadow: 0 0 1px 2px hsl(0, 0%, 100%), 0 0 2px 4px hsl(226, 100%, 87%);
+    border-radius: 1em;
+}
+  
+.switch input {
+    display: none;
+}
+
+.slider {
+    background: hsl(223, 50%, 87%);
+    cursor: pointer;
+    border-radius: 1.4em;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    content: "";
+    background: hsl(0, 0%, 100%);
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 0.3em;
+    bottom: 0.2em;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: hsl(174, 86%, 45%);
+}
+  
+input:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+.yearly-billing {
+    grid-column: 3;
+    margin: auto 0 auto 1em;
+}
+
+.yearly-billing > span {
+    background-color: hsl(14, 92%, 95%);
+    color: hsl(15, 100%, 70%);
+
+    padding: 0.2em 0.5em;
+    border-radius: 1em;
+    margin-left: 0.1em;
+}
+
+
+/* ___Lower part___ */
+.lower-part {
+    display: flex;
+    padding: 2.5em;
+}
+
+.includes > div {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    row-gap: 1em;
+}
+
+.includes img {
+    margin: auto 0;
+}
+
+.lower-part > button {
+    background-color: hsl(227, 35%, 25%);
+    color: hsl(226, 100%, 87%);
+
+    font-size: 16px;
+    cursor: pointer;
+
+    padding: 1em 4em;
+    border: none;
+    border-radius: 3em;
+    margin: auto 0 auto auto ;
+}
+
+.lower-part > button:hover {
+    box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.4);
+}
+
+.lower-part > button:focus-visible {
+    box-shadow: 0 0 1px 2px hsl(0, 0%, 100%), 0 0 2px 4px hsl(226, 100%, 87%);
+}
+
+
+
+@media(max-width: 1450px) {
+    /* ___Upper part___ */
+    .upper-part{
+        padding: 1.5em;
+        grid-template-columns: 0.6fr 0.15fr 1fr;
+    }
+    /* _pageviews_ */
+    .pageviews {
+        text-align: center;
+    }
+
+    /* ___Lower part___ */
+    .lower-part {
+        padding: 1.5em;
+    }
+}
+
+@media(max-width: 1280px){
+    body {
+        margin: 12em 0 0;
+    }
+
+    /* _______Main_______ */
+    main {
+        width: 32em;
+        margin: 0 auto;
+    }
+    /* ___Upper part___ */
+    /* _pageviews & monthly price_ */
+    .pageviews {
+        grid-column: span 3;
+    }
+    .monthly {
+        grid-column: span 3;
+        grid-row: 3;
+        margin: 0 auto;
+    }
+    .per-month {
+        margin: auto 0;
+    }
+    /* ___Lower part___ */
+    .lower-part {
+        flex-direction: column;
+    }
+    .includes > div {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .includes img, .includes p {
+        display: inline-block;
+    }
+    .lower-part > button {
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 580px) {
+    body {
+        margin: 12em 5% 0;
+    }
+
+    /* _______Main_______ */
+    main {
+        width: auto;
+    }
+    /* ___Upper part___ */
+    .upper-part {
+        grid-template-columns: 0.52fr 0.1fr 1fr;
+        padding: 1.5em 0.4em;
+        row-gap: 1.2em;
+    }
+    /* _h1 container_ */
+    .h1-container {
+        padding: 2em 0;
+        top: -9.5em;
+    }
+    .h1-container > h1 {
+        font-size: 24px;
+    }
+    .h1-container > p {
+        font-size: 15px;
+        margin: 0 auto;
+        width: 45%;
+    }
+    /* _discount stuff_ */
+    .monthly-billing {
+        margin: auto 0;
+    }
+    .yearly-billing {
+        margin: auto 0;
+    }
+}
